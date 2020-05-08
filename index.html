@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="index">
+<!--sisi, v0.1.6=============================================================-->
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!--=========================================================================-->
+<body>
+<!--titlebar-->
+  <div id="titlebar">
+    <script> // Renderer process logic
+      customTitlebar = require('custom-electron-titlebar');
+      let MyTitleBar = new customTitlebar.Titlebar({
+        backgroundColor: customTitlebar.Color.fromHex('#F0F8FF'), // aliceblue
+        shadow: true,
+        enableMnemonics: false,
+        menu: null,
+        icon: 'src/icon.ico'});
+      MyTitleBar.updateTitle('');
+    </script>
+  </div>
+<!--endtitlebar-->
+<!--apptabs-->
+  <div id="apptabs">
+    <div class="etabs-tabgroup">
+      <div class="etabs-tabs"></div>
+      <div class="etabs-buttons"></div>
+    </div>
+  </div>
+<!--endapptabs-->
+<!--viewhole-->
+  <div id="viewhole" class="viewhole">
+    <div class="etabs-views">
+    </div>
+    <div id="homebox">
+      <h1>sisi<br><img src="src/icon.png"/></h1>
+      <!--<p>a chatbox</p>-->
+    </div>
+    <div id="mask">
+      &nbsp;
+    </div>
+  </div>
+<!--endviewhole-->
+<!--initialization code (currently in rederer.js)-->
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</body>
+</html>

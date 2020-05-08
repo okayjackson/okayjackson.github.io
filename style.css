@@ -1,0 +1,345 @@
+@keyframes slideInFromTop {
+  0% {transform: translateY(-100%);}
+  98% {transform: translateY(0);}
+  99% {transform: translateY(1%);}
+  100% {transform: translateY(0);}
+}
+@keyframes slideInFromRight {
+  0% {transform: translateX(100%);}
+  98% {transform: translateX(0);}
+  99% {transform: translateX(-1%);}
+  100% {transform: translateX(0);}
+}
+html {
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+html.index {
+  background-color: aliceblue;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  font-family: 'Calibri', sans-serif;
+  color: #222;
+  font-size: 14pt;
+  font-style: normal;
+  font-weight: bold;
+}
+body {
+  margin: 0; /* As the tab needs to be in the border of the view, remove margin of the body tag */
+}
+#splash {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: whitesmoke;
+  background-image: linear-gradient(to bottom, aliceblue, silver);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+#titlebar {
+  position: relative;
+  z-index: 5;
+  /*margin: 0;*/
+}
+  .titlebar, .titlebar > * {
+    z-index: 5;
+    font-size: 12pt;
+  }
+  .action-menu-item {
+    z-index: 5;
+  }
+#apptabs {
+  position: relative;
+  z-index: 4;
+  background-color: aliceblue;
+  display: block;
+  text-align: center;
+  float: left;
+  height: 100vh;
+  width: 100px;
+  filter: drop-shadow(5px 5px 5px #222);
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+}
+  .etabs-tabgroup {
+    animation: 1.75s ease 1s 1 slideInFromTop;
+    position: relative;
+    z-index: 5;
+    padding-top: 30px;
+  }
+    .etabs-tabgroup img {
+      z-index: 5;
+      height: 55px;
+      width: 55px;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.50));
+      -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.50));
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+                                .etabs-tabgroup :hover {
+                                  z-index: 5;
+                                }
+                                .etabs-tabgroup :active {
+                                  z-index: 5;
+                                }
+  .etabs-tabs {
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+  }
+                                .etabs-tabs :hover {
+                                  z-index: 5;
+                                  transition: background 1s;
+                                  background: rgba(144, 238, 144, 0.5);
+                                }
+                                .etabs-tabs :active {
+                                  z-index: 5;
+                                  box-shadow: 0 2px rgba(144, 238, 144, 1);
+                                  transform: translateY(1.5px);
+                                }
+    .etabs-tab {
+      position: relative;
+      z-index: 5;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+                                .etabs-tab :hover {
+                                  z-index: 5;
+                                  background-color: rgba(0, 0, 0, 0);
+                                }
+                                .etabs-tab :active {
+                                  z-index: 5;
+                                  box-shadow: 0 0px rgba(0, 0, 0, 0);
+                                }
+#viewhole {
+  /*float: right;
+  position: relative;*/
+  right: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0);
+  /*height: 100vh;*/
+  /*height: calc(100% - 100px);*/
+  /*width: calc(100% - 100px);*/
+  /*width: 100%;*/
+  padding-top: 27px;
+  padding-left: 97px;
+}
+  .etabs-views {
+    position: absolute;
+    z-index: 2;
+    height: calc(100% - 27px);
+    width: calc(100% - 99px);
+    border: 0px solid #222;
+  }
+    .etab-view {
+      position: absolute;
+      z-index: 2;
+      height: 100vh;
+      width: 100%;
+    }
+  #homebox {
+    animation: 1.75s ease 1s 1 slideInFromRight;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: calc(100% - 99px);
+    background-color:rgba(0, 0, 0, 0);
+    font-size: 30pt;
+    color: whitesmoke;
+    text-align: center;
+    opacity: 0.5;
+    filter: grayscale(100%);
+  }
+    #homebox h1 {
+      margin-top: 150px;
+      line-height: 100pt;
+      font-size: 130pt;
+      letter-spacing: -0.05em;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
+      -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
+    }
+    #homebox img {
+      height: 80px;
+      width: 80px;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
+      -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
+    }
+    #homebox p {
+      margin-top: -50px;
+      font-family: 'Consolas';
+      font-style: italic;
+      font-weight: bold;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 1));
+      -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 1));
+    }
+    #mask {
+      position: absolute;
+      z-index: -2;
+      height: 100vh;
+      width: 100%;
+      background-color: whitesmoke;
+      background-image: linear-gradient(to bottom, lightgray, silver);
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      mask-image: url("src/black-linen-2.png");
+      -webkit-mask-image: url("src/black-linen-2.png");
+    }
+/*============================================================================*/
+/*
+.etabs-tabgroup {
+  width: 100%;
+  height: 32px;
+  background-color: #ccc;
+  cursor: default;
+  font: caption;
+  font-size: 14px;
+  -webkit-user-select: none;
+  user-select: none;
+  display: none;
+}
+
+.etabs-tabgroup.visible {
+	display: block;
+}
+
+.etabs-tabs {
+}
+
+.etabs-tab {
+  display: none;
+  position: relative;
+  color: #333;
+  height: 22px;
+  padding: 6px 8px 4px;
+  border: 1px solid #aaa;
+  border-bottom: none;
+  border-left: none;
+  background: linear-gradient(to bottom, rgba(234,234,234,1) 0%,rgba(204,204,204,1) 100%);
+  font: caption;
+  font-size: 14px;
+  background-color: #ccc;
+  cursor: default;
+}
+*/
+
+/* Dragula */
+/*
+.etabs-tab.gu-mirror {
+  padding-bottom: 0;
+}
+
+.etabs-tab:first-child {
+  border-left: none;
+}
+
+.etabs-tab.visible {
+  display: inline-block;
+  float: left;
+}
+
+.etabs-tab.active {
+  background: #fff;
+}
+
+.etabs-tab.flash {
+  background: linear-gradient(to bottom, rgba(255,243,170,1) 0%,rgba(255,227,37,1) 100%);
+}
+
+.etabs-buttons {
+  float: left;
+}
+
+.etabs-buttons button {
+  float: left;
+  color: #333;
+  background: none;
+  border: none;
+  font-size: 12px;
+  margin-top: 6px;
+  border-radius: 2px;
+  margin-left: 4px;
+  width: 20px;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.etabs-buttons button:hover {
+  color: #eee;
+  background-color: #aaa;
+}
+
+.etabs-tab-badge {
+  position: absolute;
+  right: 0;
+  top: -7px;
+  background: red;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 10px;
+  padding: 0 5px;
+}
+
+.etabs-tab-badge.hidden {
+  display: none;
+}
+
+.etabs-tab-icon {
+  display: inline-block;
+  height: 16px;
+}
+
+.etabs-tab-icon img {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.etabs-tab-title {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.etabs-tab-buttons {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.etabs-tab-buttons button {
+  display: inline-block;
+  color: #333;
+  background: none;
+  border: none;
+  width: 20px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.etabs-tab-buttons button:hover {
+  color: #eee;
+  background-color: #aaa;
+}
+
+.etabs-views {
+  position: relative;
+  border-top: 1px solid #aaa;
+  height: calc(100vh - 33px);
+}
+
+.etab-view {
+  position: relative;
+}
+*/

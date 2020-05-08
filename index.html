@@ -8,20 +8,6 @@
 </head>
 <!--=========================================================================-->
 <body>
-<!--titlebar-->
-  <div id="titlebar">
-    <script> // Renderer process logic
-      customTitlebar = require('custom-electron-titlebar');
-      let MyTitleBar = new customTitlebar.Titlebar({
-        backgroundColor: customTitlebar.Color.fromHex('#F0F8FF'), // aliceblue
-        shadow: true,
-        enableMnemonics: false,
-        menu: null,
-        icon: 'src/icon.ico'});
-      MyTitleBar.updateTitle('');
-    </script>
-  </div>
-<!--endtitlebar-->
 <!--apptabs-->
   <div id="apptabs">
     <div class="etabs-tabgroup">
@@ -43,10 +29,7 @@
     </div>
   </div>
 <!--endviewhole-->
-<!--initialization code (currently in rederer.js)-->
   <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
   </script>
 </body>
 </html>
